@@ -16,12 +16,17 @@ class RoleSeeder extends Seeder
     public function run()
     {
         $rolAdmin = Role::create(['name'=> 'Admin']);
+
+
         $permisoAdmin = Permission::create(['name' => 'CRUD Manager']);
 
         $rolAdmin->givePermissionTo($permisoAdmin);
 
         $rolNormal = Role::create(['name'=>'User']);
+
         $permisoNormal = Permission::create(['name'=>'Normal User']);
+       
+       
         $rolNormal->givePermissionTo($permisoNormal);
 
     }
